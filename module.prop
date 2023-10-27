@@ -1,7 +1,6 @@
-id=MMT-Ex
-name=Magisk Module Template Extended
-version=v3.5
-versionCode=17
-author=Zackptg5
-description=Magisk Module Template Extended
-updateJson=https://raw.githubusercontent.com/Zackptg5/MMT-Extended/master/update.json
+id=com.termux.binary
+name=com.termux Binary Files
+version=0.118.0
+versionCode=1
+author=5kind
+description=Provide termux binary in android shell.
