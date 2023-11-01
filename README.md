@@ -27,4 +27,4 @@
 - `cd com.termux.binary`
 - run [./update-binary.sh](./update-binary.sh) `<pkgname>` (such as bash)
 - `zip -r install.zip *`
-- install modules install.zip in Magisk/KernelSU
+- install module install.zip in Magisk/KernelSU (`su -c magisk --install-module install.zip`)
