@@ -64,4 +64,4 @@ done    # remove useless command
 ##########################################################################################
 # End of install, we remove this script, you can delete this line or download it back
 ##########################################################################################
-rm $0
+cd $MODDIR && rm check-system-binary.sh make-module.sh post-fs-data.sh update-binary.sh
