@@ -41,6 +41,7 @@ xargs
 "
 # remove next function
 REMOVE_LIST="acpid
+busybox
 "
 # busybox
 # add busybox to $REMOVE_LIST to hide busybox binary
