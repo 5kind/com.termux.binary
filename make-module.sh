@@ -3,7 +3,5 @@ MODDIR=${0%/*}
 termux_cmd=(bash chroot)
 
 cd $MODDIR
-for cmd in ${termux_cmd[@]} ;do
-    ./update-binary.sh $cmd
-done
+bash update-binary.sh ${termux_cmd[@]}
 zip -r install.zip *
