@@ -1,6 +1,6 @@
 id=com.termux.binary
-name=com.termux Binary Files
+name=Termux Binary Files
 version=0.118.0
 versionCode=1
-author=5kind
+author=com.termux
 description=Provide termux binary in android shell.
