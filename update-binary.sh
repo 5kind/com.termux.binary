@@ -22,28 +22,30 @@ find_binary(){
     return 1
 }
 
-# install $1 to bin/lib64 under $MODDIR/system
+# install $1 to bin/lib64 under $MODDIR/system, require abs path.
 install_binary(){
-    local binfile=$1
+    local binfile=$(find_binary $1)
+    local basebin=$(basename $1)
     case $(basename $(dirname ${binfile})) in
         bin)
-            cp -rvfL ${binfile} ${MODDIR}/system/bin
+            cp -rvfL ${binfile} ${MODDIR}/system/bin/${basebin}
             ;;
         lib)
-            cp -rvfL ${binfile} ${MODDIR}/system/lib64
+            cp -rvfL ${binfile} ${MODDIR}/system/lib64/${basebin}
             ;;
     esac
 }
 
 # install libraries in $(ldd $1) to $MODDIR/system/lib64
 install_library(){
-    for library in $(ldd $(binfind $install_binary) | grep ${APKID} | awk '{print $NF}') ;do
-        install_binary $library
+    for needlib in $(ldd $(find_binary $1) | grep ${APKID} | awk '{print $NF}') ;do
+        install_binary $needlib
     done
 }
 
 # find, install ${@} file in $PREFIX to $MODDIR/system
 [ -z "${@}" ] && echo "ERROR: Required at least one file to install!" && exit 1
+mkdir -p ${MODDIR}/system/{bin,lib64}
 for install_module in ${@} ;do
     install_binary $install_module
     install_library $install_module
