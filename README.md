@@ -21,7 +21,7 @@
 </div>
 
 ### Usage
-- install `git zip apt-file` in termux app (`apt install git zip apt-file`)
+- install `git ldd zip apt-file` in termux app (`apt install git ldd zip apt-file`)
 - `apt-file update`
 - `git clone https://github.com/5kind/com.termux.binary`
 - `cd com.termux.binary`
