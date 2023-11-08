@@ -4,7 +4,7 @@ APKID=com.termux
 MODID=${APKID}.binary
 PREFIX=/data/data/com.termux/files/usr
 
-if [[ -z "$TERMUX_VERSION" ]] ;then
+if [ -z "$TERMUX_VERSION" ] ;then
     echo "Warning: Not termux environment, unexpected result may happen!"
     TERMUX_VERSION=0.118.0
     sleep 1
@@ -13,7 +13,7 @@ fi
 
 # find bin/lib file under $PREFIX to $MODDIR
 find_binary(){
-    [[ -e $1 ]] && printf $(realpath $1) && return 0
+    [ -e $1 ] && printf $(realpath $1) && return 0
     local needbin=$(basename $1)
     for binpath in ${PREFIX}/{bin,lib} ;do
         ls "${binpath}/${needbin}" 2>/dev/null &&
